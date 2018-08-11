@@ -4,9 +4,10 @@ function dataHandling(array2) {
     array2.splice([4], 1, "Pria", "SMA Internasional Metro");
     var birthday = array2[3];
     var birthdaySplitted = birthday.split("/");
-    // var birthdaySplittedNumber = [ Number(birthdaySplitted[0]), Number(birthdaySplitted[1]), Number(birthdaySplitted[2])];
-    var newBirthdayFormat = birthdaySplitted.sort(function(value1, value2) { return value1 < value2 });
     var month = birthdaySplitted[1];
+    var tanggalBaru = birthdaySplitted.join('-');
+    var newBirthdayFormat = birthdaySplitted.sort(function(value1, value2) { return value2 - value1 });
+    var slicedName = array2[1].slice(0,15);
     switch(month){
         case '01' :
         month = 'Januari';
@@ -63,8 +64,8 @@ function dataHandling(array2) {
     console.log(array2);
     console.log(month);
     console.log(newBirthdayFormat);
-    // console.log(birthdaySplittedNumber[0].toString());
-    
+    console.log(tanggalBaru);
+    console.log(slicedName);
 }
 
 
