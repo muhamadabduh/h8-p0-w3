@@ -8,11 +8,12 @@ function angkaPalindrome(num) {
             while(check === false){
                 var stringNum = num.toString();
                 var reverseString = stringNum.split('').reverse().join('');
+                
                 if(reverseString === stringNum){
-                check = true;
-            } else {
-                num += 1;
-            }
+                    check = true;
+                } else {
+                    num += 1;
+                }
             
         }
         return num;
