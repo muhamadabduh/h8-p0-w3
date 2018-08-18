@@ -12,34 +12,23 @@ Urutan hewan dalam array setiap pengelompokan huruf tidak penting.
 */
 
 function groupAnimals(animals) {
-    var kelompokBinatang = [];
-    animals.sort();
-    var hurufDepan = [];
+    var abjad = 'abcdefghijklmnopqrstuvwxyz';
+    // var hurufDepan = [];
+    var kandangUtama = [];
     
-    for (var i = 0; i < animals.length; i++){
-        hurufDepan.push(animals[i][0]);
-    }
-
-    var count = 0;
-    for (var j = 0; j < hurufDepan.length; j++){
-        if (hurufDepan[j] === hurufDepan[j+1]){
-            count += 1;
+    for(var i = 0; i < abjad.length; i++){
+        var kandangKecil = [];
+        for(var j = 0; j < animals.length; j++){
+            if(animals[j][0] === abjad[i]){
+                kandangKecil.push(animals[j]);
+            }
+        }
+        if(kandangKecil.length !== 0){
+            kandangUtama.push(kandangKecil);
         }
     }
-
-    for (var k = 0; k <= count; k++){
-        kelompokBinatang.push([]);
-    }
-    kelompokBinatang[0].push(animals[0]);
-    // for (var x = 0; x < animals.length; x++){
-        
-    //     if(animals[x][0] === animals[x+1][0]){
-    //         kelompokBinatang.push(animals[x+1]);
-    //     } else if (animals)
-    // }
     
-    // return animals[2][0];
-    return kelompokBinatang;
+    return kandangUtama;
   }
   
   // TEST CASES

@@ -1,11 +1,10 @@
 function tentukanDeretAritmatika(arr) {
-    for (var i = arr.length - 1; i >= 0 ; i--){
-        if(arr[i] - arr[i-1] !== arr[i-1] - arr[i-2]){
+    for (var i = 0; i+2 < arr.length ; i++){
+        if(arr[i+2] - arr[i+1] !== arr[i+1] - arr[i]){
             return false;
-        } else {
-            return true;
-        }
+        } 
     }
+    return true;
   }
   
   // TEST CASES
